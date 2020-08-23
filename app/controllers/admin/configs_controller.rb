@@ -53,7 +53,7 @@ module Admin
       params[:site_config][:email_addresses][:default] = ApplicationConfig["DEFAULT_EMAIL"] if has_emails
       params.require(:site_config).permit(
         allowed_params,
-        authentication_providers: [],
+        authentication_providers: ["github, twitter"],
         social_media_handles: SiteConfig.social_media_handles.keys,
         email_addresses: SiteConfig.email_addresses.keys,
         meta_keywords: SiteConfig.meta_keywords.keys,
